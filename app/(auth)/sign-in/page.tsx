@@ -67,6 +67,11 @@ const SignIn = (props: SignInProps): React.ReactElement => {
                 <hr className="my-6 border-t" />
                 <div className="text-center">
                     <Button variant="link" className="hover:no-underline cursor-default">
+                        <Link className="hover:underline mx-1" href='/forgot-password'>Forgot Password?</Link>
+                    </Button>
+                </div>
+                <div className="text-center">
+                    <Button variant="link" className="hover:no-underline cursor-default">
                         Dont't have a account?
                         <Link className="hover:underline mx-1" href='/sign-up'>Sign Up</Link>
                     </Button>
