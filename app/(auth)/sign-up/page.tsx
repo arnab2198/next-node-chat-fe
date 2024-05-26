@@ -23,14 +23,6 @@ const SignUp = (props: SignUpProps): React.ReactElement => {
                         </div>
                         Sign Up with Google
                     </Button>
-
-                    <Button
-                        className="w-full max-w-xs font-bold shadow-sm rounded-lg py-7 bg-indigo-100 text-gray-800 transition-all duration-300 ease-in-out focus:outline-none hover:shadow  hover:text-white focus:shadow-sm focus:shadow-outline mt-5">
-                        <div className="bg-white p-1 rounded-full mx-4">
-                            <Icons.gitHub />
-                        </div>
-                        Sign Up with GitHub
-                    </Button>
                 </div>
 
                 <div className="my-12 border-b text-center">

@@ -16,6 +16,7 @@ export default function AuthLayout({
                                 width={300}
                                 height={300}
                                 src={LogoImg}
+                                priority={false}
                                 className="w-32 mx-auto" alt={""} />
                         </div>
                         {children}

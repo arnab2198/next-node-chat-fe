@@ -1,15 +1,16 @@
-import type { NextRequest } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
-export function middleware(request: NextRequest) {
-    const currentUser = false;
-    console.log(request.nextUrl.pathname)
+export default function middleware(request: NextRequest) {
+    const isAuthenticated = false;
+    const authRoutes = ['/sign-in', '/sign-up', '/forgot-password'];
+    const currentPath = request.nextUrl.pathname;
 
-    if (currentUser && !request.nextUrl.pathname.startsWith('/')) {
-        return Response.redirect(new URL('/', request.url))
+    if (currentPath.toString() === '/' && !isAuthenticated) {
+        return NextResponse.redirect(new URL("/sign-in", request.url));
     }
 
-    if (!currentUser && !['/sign-in', '/sign-up', '/forgot-password'].includes(request.nextUrl.pathname)) {
-        return Response.redirect(new URL('/sign-in', request.url))
+    if (authRoutes.includes(currentPath) && isAuthenticated) {
+        return NextResponse.redirect(new URL("/", request.url));
     }
 }
 
